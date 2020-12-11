@@ -19,7 +19,7 @@ The scripts contained in this repo were used to process the above dataset using
 computed seasonal averages of TCWV. The run completed in 96m 44s and
 generated a total of 651 MB of data.
 
-2 batch scripts were used for the run.
+3 scripts were used for the run.
 
 | script name | description |
 | :---- | :---- |
