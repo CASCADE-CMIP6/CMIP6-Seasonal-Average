@@ -29,6 +29,6 @@ generated a total of 651 MB of data.
 
 These can be used as a template for making other similar runs. The run size was
 determined by the number of seasons the input data spans. 4 seasons in each of
-41 years results in 164 seasons total. One will need to modify the paths in the
-scripts to point to a TECA install. One may or may not need to reorganize the
-data as shown in this example.
+41 years which leads to using 164 MPI ranks to process the 164 seasons. One will
+need to modify the paths in the scripts to point to a TECA install. One may or may
+not need to reorganize the data as shown in this example.
