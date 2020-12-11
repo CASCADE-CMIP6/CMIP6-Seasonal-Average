@@ -35,7 +35,7 @@ mkdir -p ${out_dir}
 # input is 41 years of 1 hourly data, the output is seasonal, with 164 seasons.
 time srun -N 164 -n 164 \
     teca_temporal_reduction \
-        --n_threads 2 --verbose 1 --input_regex ${data_dir}/'.*\.nc$' \
+        --n_threads 4 --verbose 1 --input_regex ${data_dir}/'.*\.nc$' \
         --x_axis_variable longitude --y_axis_variable latitude \
         --interval seasonal --operator average --point_arrays TCWV \
         --output_file ${out_dir}/e5_oper_an_sfc_128_137_tcwv_ll025sc_seasonal_avg_%t%.nc \

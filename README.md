@@ -16,7 +16,7 @@ seasons.  The TCWV field contains a total of 546 GB of data.
 
 The scripts contained in this repo were used to process the above dataset using
 164 cores on 164 KNL nodes on NERSC's Cray supercomputer Cori. The run
-computed seasonal averages of TCWV. The run completed in 96m 44s and
+computed seasonal averages of TCWV. The run completed in 81m 2s and
 generated a total of 651 MB of data.
 
 3 scripts were used for the run.
