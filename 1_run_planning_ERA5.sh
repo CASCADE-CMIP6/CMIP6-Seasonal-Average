@@ -6,17 +6,6 @@
 #SBATCH -A m1517
 #SBATCH -J 1_run_planning_ERA5
 
-# use symlinks to reorganize the data
-if [[ ! -e CMIP6_ERA5_e5_oper_an_sfc ]]
-then
-    mkdir CMIP6_ERA5_e5_oper_an_sfc/
-    for d in `ls --color=never  /global/cfs/cdirs/m3522/cmip6/ERA5/e5.oper.an.sfc`
-    do
-        f=/global/cfs/cdirs/m3522/cmip6/ERA5/e5.oper.an.sfc/${d}/e5.oper.an.sfc.128_137_tcwv.*.nc
-        ln -s ${f} CMIP6_ERA5_e5_oper_an_sfc/
-    done
-fi
-
 # bring a TECA install into your environment.
 # change the following paths to point to your TECA install
 module swap PrgEnv-intel PrgEnv-gnu

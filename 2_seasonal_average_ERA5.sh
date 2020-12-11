@@ -30,7 +30,7 @@ data_dir=CMIP6_ERA5_e5_oper_an_sfc
 out_dir=CMIP6_ERA5_e5_oper_an_sfc_seasonal_avg
 mkdir -p ${out_dir}
 
-# compute the daily average. change -N and -n to match the rus size.
+# compute the daily average. change -N and -n to match the run size.
 # the run size is determened by the number of output time steps. here the
 # input is 41 years of 1 hourly data, the output is seasonal, with 164 seasons.
 time srun -N 164 -n 164 \
