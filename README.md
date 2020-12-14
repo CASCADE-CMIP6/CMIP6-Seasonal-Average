@@ -1,7 +1,7 @@
-CMIP6-Seasonal-Average
+ERA5-Seasonal-Average
 ==========================
 This repo contains batch scripts illustrating computing seasonal averages
-of TCWV(total cumulative water vapor) from a HighResMIP dataset using
+of TCWV(total cumulative water vapor) from a ERA5 dataset using
 [TECA](https://github.com/LBL-EESA/TECA).
 
 The data used in this example is located on NERSC's Cori file system at:
