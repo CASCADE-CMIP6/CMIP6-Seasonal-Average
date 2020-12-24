@@ -6,19 +6,16 @@
 #SBATCH -A m1517
 #SBATCH -J 1_run_planning_ERA5
 
-# bring a TECA install into your environment.
-# change the following paths to point to your TECA install
+# load gcc
 module swap PrgEnv-intel PrgEnv-gnu
-module use /global/cscratch1/sd/loring/teca_testing/deps/seasonal_reduction/modulefiles/
+
+# bring a TECA install into your environment.
+module use /global/cscratch1/sd/loring/teca_testing/installs/develop/modulefiles
 module load teca
 
 # print the commands as they execute, and error out if any one command fails
 set -e
 set -x
-
-# configure HDF5 file locking if on Cori (CFS)community file system
-# This is not needed on Cori Lustre scratch file system
-export HDF5_USE_FILE_LOCKING=FALSE
 
 # run the probe to determine number size of the dataset
 time srun -n 247 teca_metadata_probe \

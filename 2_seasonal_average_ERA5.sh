@@ -6,24 +6,18 @@
 #SBATCH -A m1517
 #SBATCH -J 2_seasonal_average_ERA5
 
+# load gcc
 module swap PrgEnv-intel PrgEnv-gnu
 
-# bring a TECA install into your environment
-# change the following paths to point to your TECA install
-module use /global/cscratch1/sd/loring/teca_testing/deps/seasonal_reduction/modulefiles
+# bring a TECA install into your environment.
+module use /global/cscratch1/sd/loring/teca_testing/installs/develop/modulefiles
 module load teca
 
 # print the commands as they execute, and error out if any one command fails
 set -e
 set -x
 
-# configure HDF5 file locking if on Cori (CFS)community file system
-# This is not needed on Cori Lustre scratch file system
-export HDF5_USE_FILE_LOCKING=FALSE
-
-# prevents an abort when import'ing numpy on KNL
-export OPENBLAS_NUM_THREADS=1
-
+# directory with symlinks to the files
 data_dir=CMIP6_ERA5_e5_oper_an_sfc
 
 # make a directory for the output files
@@ -40,5 +34,3 @@ time srun -N 164 -n 164 \
         --interval seasonal --operator average --point_arrays TCWV \
         --output_file ${out_dir}/e5_oper_an_sfc_128_137_tcwv_ll025sc_seasonal_avg_%t%.nc \
         --steps_per_file 4
-
-
